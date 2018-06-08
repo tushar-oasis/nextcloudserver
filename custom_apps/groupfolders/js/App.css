@@ -1,0 +1,97 @@
+#groupfolders-react-root, #groupfolders-root {
+  height: 100%;
+}
+
+#groupfolders-react-root {
+
+  &, & > table {
+    width: 100%;
+  }
+
+  tr {
+    height: 32px;
+  }
+
+  th {
+    border-bottom: 1px #ddd solid;
+  }
+
+  td, th {
+    padding: 10px;
+    position: relative;
+    display: table-cell;
+
+    & > form {
+      margin: -10px;
+
+      input[type='text'] {
+        width: 100%;
+      }
+    }
+
+    .action-rename {
+      &::after {
+        display: inline-block;
+        position: relative;
+        top: 2px;
+        left: 2px;
+        content: '';
+        width: 16px;
+        height: 16px;
+        background: url('../../../core/img/actions/rename.svg') no-repeat center;
+        opacity: 0;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    &.groups {
+      width: 400px;
+    }
+
+    &.remove {
+      width: 32px;
+    }
+
+    a.icon {
+      margin-left: 5px;
+    }
+  }
+
+  tr:hover {
+    .icon {
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .action-rename {
+      &::after {
+        opacity: 0.5;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .icon {
+    display: inline-block;
+    opacity: 0;
+  //transition: opacity 0.5s;
+
+    &.icon-visible {
+      opacity: 0.5;
+    }
+  }
+
+  .newgroup-name {
+    width: 200px;
+    max-width: calc(100% - 40px);
+  }
+}
